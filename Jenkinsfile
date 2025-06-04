@@ -22,6 +22,7 @@ pipeline {
             steps {
                 echo 'Running tests'
                 sh 'npm run test'
+                sh 'node -v'
             }
         }
     }
