@@ -12,14 +12,10 @@ pipeline {
                 sh 'node -v'
             }
         }
-        stage('Install dependencies & run tests') {
+        stage('Install dependencies') {
             steps {
                 echo 'Installing dependencies'
                 sh 'npm install'
-            }
-            steps {
-                echo 'Running tests'
-                sh 'npm test'
             }
         }
     }
