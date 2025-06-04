@@ -5,16 +5,21 @@ pipeline {
     }
 
     stages {
-        // stage('Fetch code') {
-        //     steps {
-        //         git branch: 'master', credentials
-        //     }
-        // }
         stage('Hello') {
             steps {
                 echo 'Hello World'
                 sh 'npm -v'
                 sh 'node -v'
+            }
+        }
+        stage('Install dependencies & run tests') {
+            steps {
+                echo 'Installing dependencies'
+                sh 'npm install'
+            }
+            steps {
+                echo 'Running tests'
+                sh 'npm test'
             }
         }
     }
