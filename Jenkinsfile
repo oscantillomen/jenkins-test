@@ -22,7 +22,12 @@ pipeline {
             steps {
                 echo 'Running tests'
                 sh 'npm run test'
-                sh 'node -v'
+            }
+        }
+        stage('Run Build') {
+            steps {
+                echo 'Building'
+                sh 'npm run build'
             }
         }
     }
