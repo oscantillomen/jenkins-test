@@ -28,6 +28,7 @@ pipeline {
             steps {
                 echo 'Building'
                 sh 'npm run build'
+                echo 'test'
             }
         }
     }
